@@ -32,13 +32,13 @@ ____
 We are going to initialize W and b (bias) regarded to input layer and each hidden layer.
 * _The input layer has 49,152 node, while each hidden layer has 3. The output layer contain 1 node that represent the label (0 for dog and 1 for cat)_ => the shape of W1, W2 and W3 are (3, 49.152), (3,3), (1,3) respectively.
 
->```W1 = np.random.randn(num_hidden, X_train.shape[1])/np.sqrt(X_train.shape[1])
-> b1 = np.random.randn(num_hidden, 1)```
+```W1 = np.random.randn(num_hidden, X_train.shape[1])/np.sqrt(X_train.shape[1])
+b1 = np.random.randn(num_hidden, 1)
 
-> ```W2 = np.random.randn(num_hidden, num_hidden)/np.sqrt(num_hidden)
-b2 = np.random.randn(num_hidden, 1)```
+W2 = np.random.randn(num_hidden, num_hidden)/np.sqrt(num_hidden)
+b2 = np.random.randn(num_hidden, 1)
 
->```W3 = np.random.randn(1, num_hidden)/np.sqrt(num_hidden)
+W3 = np.random.randn(1, num_hidden)/np.sqrt(num_hidden)
 b3 = np.random.randn(1, 1)```
 
 #### After initialize the network, we start out 1st step: feed the training data throught the network! 
@@ -51,13 +51,13 @@ b3 = np.random.randn(1, 1)```
 
 __ Feed forward __
 
->```Z1 = np.dot(W1, X_train.T) + b1
-A1 = Relu(Z1) ```
+```Z1 = np.dot(W1, X_train.T) + b1
+A1 = Relu(Z1) 
 
->```Z2 = np.dot(W2, A1) + b2
-A2 = Relu(Z2)```
+Z2 = np.dot(W2, A1) + b2
+A2 = Relu(Z2)
 
->``` Z3 = np.dot(W3, A2) + b3
+Z3 = np.dot(W3, A2) + b3
 y_hat = Sigmoid(Z3)```
 
 __ Calculate the cost function: J = $1/m*(-(y*\log(yhat) -(1-y)*\log(1-yhat))$ __
