@@ -12,21 +12,21 @@
 * The dataset contains train dataset and test dataset - which are in __H5__ format. __H5__ is an efficience way to store data, and Python has a library __h5py__ for working with __H5__.
 * The train and test dataset contain 2 keys: `images` (which contains training instances) and `labels` (which has 2 values: 0 represents dog and 1 represents cat).
 
-![download.png](attachment:download.png)
+![](https://drive.google.com/file/d/1nyDWYtXUGLgsHNtgKWpRHd8llHwfg-2m/view?usp=sharing)
 
 ----
 
 ### For the first part, we are going to build a simple neural net with 2 hidden layer
-_ If you have no idea what is neural net, [this article](https://www.techradar.com/news/what-is-a-neural-network) mights help _
+_If you have no idea what is neural net, [this article](https://www.techradar.com/news/what-is-a-neural-network) mights help_
 
-![neural_net.png](attachment:neural_net.png)
+
 
 ### meaning of these symbols:
 * __X__: Our input layer, in this case is our `images` of dog and cat
 * __Yh__, __Y__: Predicted label (which is produced by neural net) and Real label
 * __W1__, __W2__, __W3__: Our need-to-optimized parameters - these are bones of neural net.
 * __A__, __Z__: These are informations that transfer through the network from input data (adjustments by multiply with W) and help us to produce the prediction - which then used for optimized W.
-____
+----
 
 ## The first step: Initialize the network
 We are going to initialize W and b (bias) regarded to input layer and each hidden layer.
@@ -64,7 +64,7 @@ Z3 = np.dot(W3, A2) + b3
 y_hat = Sigmoid(Z3)
 ```
 
-__ Calculate the cost function: J = $1/m*(-(y*\log(yhat) -(1-y)*\log(1-yhat))$ __
+__Calculate the cost function: J = $1/m*(-(y*\log(yhat) -(1-y)*\log(1-yhat))$__
 >J = (- np.multiply(y_train, np.log(y_hat)) - np.multiply(1-y_train, np.log(1-y_hat))) / y_train.shape[1] 
 
 ## Third step: Back propagation
@@ -72,7 +72,7 @@ After having the cost J (Which present how big the different between predicts ma
 * Note that the formular for back-propagation at all layer are lookalike except for last layer.
 * At each step we should check the shape of all factors to make sure that we are on the right track.
 
-__ Compute derivative __
+__Compute derivative__
 
 ```
 e3 = Yh - Y
@@ -88,7 +88,7 @@ dW1 = e1.dot(X_train)/X_train.shape[1]
 db1 = np.sum(e1)/X_train.shape[1]
 ```
 
-__ Then we update W and b __
+__Then we update W and b__
 
 ```lr = 0.001
 
@@ -101,7 +101,7 @@ b2 -= lr * db2
 b1 -= lr * db1
 ```
 
-_ `lr` is the "learning rate". The learning rate define how much we want our model learned at each iteration. If the learning rate is too big it will make the neural net never converge while the very small learning rate will take our model forever to converge. _
+_`lr` is the "learning rate". The learning rate define how much we want our model learned at each iteration. If the learning rate is too big it will make the neural net never converge while the very small learning rate will take our model forever to converge._
 
 ### Congrat! We have just finished 1 round of feed-forward and backpropagation. Our parameters is making a small step toward the optimal paremeters and that is good. Normally we would run couple of thousands time in order to have the good-enough model that can be able to distinquish between dog and cat.
 
