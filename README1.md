@@ -52,7 +52,7 @@ b3 = np.random.randn(1, 1)
 
 ![](https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/68755490_2334797376836944_5889943932975972352_o.jpg?_nc_cat=102&_nc_oc=AQmdumJRVIeyxUm1_iraazG0lIBxV0NTC46QMWCkZKfQU-JYH4l-oQIwmqbxRwCjlNE&_nc_ht=scontent.fsgn2-2.fna&oh=f0154d2f35fa970746ff27ce8a80e7d0&oe=5DC822F5)
 
-__ Feed forward __
+__Feed forward__
 
 ```
 Z1 = np.dot(W1, X_train.T) + b1
