@@ -12,14 +12,14 @@
 * The dataset contains train dataset and test dataset - which are in __H5__ format. __H5__ is an efficience way to store data, and Python has a library __h5py__ for working with __H5__.
 * The train and test dataset contain 2 keys: `images` (which contains training instances) and `labels` (which has 2 values: 0 represents dog and 1 represents cat).
 
-![](https://drive.google.com/file/d/1nyDWYtXUGLgsHNtgKWpRHd8llHwfg-2m/view?usp=sharing)
+![](https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/68587621_2334797396836942_7118842923717754880_n.jpg?_nc_cat=108&_nc_oc=AQlgOJJ7spaaYN4PQTE-QZBZ4fTKa6k7TIMYqErY-XoLNI313GAsv9oKP77GF_WekcI&_nc_ht=scontent.fhan2-3.fna&oh=e0fdbe54f1709564296a298d99c938c1&oe=5E118AC6)
 
 ----
 
 ### For the first part, we are going to build a simple neural net with 2 hidden layer
 _If you have no idea what is neural net, [this article](https://www.techradar.com/news/what-is-a-neural-network) mights help_
 
-
+![](https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/68657008_2334797366836945_8297018333513908224_n.jpg?_nc_cat=108&_nc_oc=AQmmlzAvMMimAaYhVmkDNYc0a73Da0cvQWlgbecDTRljZ-KuTbOQLT-qAAuNDztuXjs&_nc_ht=scontent.fhan2-3.fna&oh=0d5faf632840be9cf711d46cafb1e7f5&oe=5E12A59B)
 
 ### meaning of these symbols:
 * __X__: Our input layer, in this case is our `images` of dog and cat
@@ -49,7 +49,8 @@ b3 = np.random.randn(1, 1)
 ## Second step: Feed data forward through layer.
 
 * Remember that the shape of input and W must match, so we should check the shape before making any calculation.
-![fw_1.png](attachment:fw_1.png)
+
+![](https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/68755490_2334797376836944_5889943932975972352_o.jpg?_nc_cat=102&_nc_oc=AQmdumJRVIeyxUm1_iraazG0lIBxV0NTC46QMWCkZKfQU-JYH4l-oQIwmqbxRwCjlNE&_nc_ht=scontent.fsgn2-2.fna&oh=f0154d2f35fa970746ff27ce8a80e7d0&oe=5DC822F5)
 
 __ Feed forward __
 
