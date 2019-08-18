@@ -53,17 +53,19 @@ b3 = np.random.randn(1, 1)
 
 __ Feed forward __
 
-```Z1 = np.dot(W1, X_train.T) + b1
+```
+Z1 = np.dot(W1, X_train.T) + b1
 A1 = Relu(Z1) 
 
 Z2 = np.dot(W2, A1) + b2
 A2 = Relu(Z2)
 
 Z3 = np.dot(W3, A2) + b3
-y_hat = Sigmoid(Z3)```
+y_hat = Sigmoid(Z3)
+```
 
 __ Calculate the cost function: J = $1/m*(-(y*\log(yhat) -(1-y)*\log(1-yhat))$ __
->```J = (- np.multiply(y_train, np.log(y_hat)) - np.multiply(1-y_train, np.log(1-y_hat))) / y_train.shape[1] ```
+>J = (- np.multiply(y_train, np.log(y_hat)) - np.multiply(1-y_train, np.log(1-y_hat))) / y_train.shape[1] 
 
 ## Third step: Back propagation
 After having the cost J (Which present how big the different between predicts made by neural net and real labels), we compute derivative of J with respect to W1, W2 & W3 - which are used for adjusting W and b.
@@ -72,29 +74,32 @@ After having the cost J (Which present how big the different between predicts ma
 
 __ Compute derivative __
 
->```e3 = Yh - Y
+```
+e3 = Yh - Y
 dW3 = e3.dot(A2.T)/A2.shape[0]
-db3 = np.sum(e3)/A2.shape[0] ```
+db3 = np.sum(e3)/A2.shape[0] 
 
->```e2 = W3.T.dot(e3) * A2
+e2 = W3.T.dot(e3) * A2
 dW2 = e2.dot(A1.T)/A1.shape[0]
 db2 = np.sum(e2)/A1.shape[0]```
 
->``` e1 =  W2.T.dot(e2) * A1
+e1 =  W2.T.dot(e2) * A1
 dW1 = e1.dot(X_train)/X_train.shape[1]
-db1 = np.sum(e1)/X_train.shape[1]```
+db1 = np.sum(e1)/X_train.shape[1]
+```
 
 __ Then we update W and b __
 
->```lr = 0.001```
+```lr = 0.001
 
->```W3 -= lr * dW3
+W3 -= lr * dW3
 W2 -= lr * dW2
-W1 -= lr * dW1```
+W1 -= lr * dW1
 
->```b3 -= lr * db3
+b3 -= lr * db3
 b2 -= lr * db2
-b1 -= lr * db1```
+b1 -= lr * db1
+```
 
 _ `lr` is the "learning rate". The learning rate define how much we want our model learned at each iteration. If the learning rate is too big it will make the neural net never converge while the very small learning rate will take our model forever to converge. _
 
@@ -102,7 +107,8 @@ _ `lr` is the "learning rate". The learning rate define how much we want our mod
 
 => So it's time to put all that we have done in a for loop
 
-```lr = 0.01
+```
+lr = 0.01
 for i in range(3000):
     num_train = np.random.randint(0, 12289)
 
@@ -129,7 +135,8 @@ for i in range(3000):
     W1 -= lr * dW1
     b3 -= lr * db3
     b2 -= lr * db2
-    b1 -= lr * db1```
+    b1 -= lr * db1
+```
 
 ## Further work:
 - We should try to clean our code by putting them in `def` function.
