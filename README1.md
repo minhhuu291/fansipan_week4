@@ -32,14 +32,16 @@ ____
 We are going to initialize W and b (bias) regarded to input layer and each hidden layer.
 * _The input layer has 49,152 node, while each hidden layer has 3. The output layer contain 1 node that represent the label (0 for dog and 1 for cat)_ => the shape of W1, W2 and W3 are (3, 49.152), (3,3), (1,3) respectively.
 
-```W1 = np.random.randn(num_hidden, X_train.shape[1])/np.sqrt(X_train.shape[1])
+```
+W1 = np.random.randn(num_hidden, X_train.shape[1])/np.sqrt(X_train.shape[1])
 b1 = np.random.randn(num_hidden, 1)
 
 W2 = np.random.randn(num_hidden, num_hidden)/np.sqrt(num_hidden)
 b2 = np.random.randn(num_hidden, 1)
 
 W3 = np.random.randn(1, num_hidden)/np.sqrt(num_hidden)
-b3 = np.random.randn(1, 1)```
+b3 = np.random.randn(1, 1)
+```
 
 #### After initialize the network, we start out 1st step: feed the training data throught the network! 
 ----
